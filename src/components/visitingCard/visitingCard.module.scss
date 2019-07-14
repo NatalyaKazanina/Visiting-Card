@@ -1,0 +1,85 @@
+.visitingCard {
+  width: 100%;
+  min-height: 82vh;
+  display: flex;
+  letter-spacing: .5px;
+
+  &Shadow {
+    width: 100%;
+    min-height: 82vh;
+    display: flex;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,50,.7);
+  }
+
+  &Wrap {
+    display: flex;
+  }
+
+  &Image {
+    background: url("https://static.wixstatic.com/media/813b164e6ecd49b0b09f5f9913d34577.jpg/v1/fit/w_1024,h_683,al_c,q_80/file.png") no-repeat center;
+    background-size: cover;
+    width: 100%;
+    min-height: 82vh;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: -999;
+  }
+
+  &Photo {
+    background: url("../../photo.jpg") no-repeat center;
+    background-size: cover;
+    width: 470px;
+    height: 470px;
+    margin-top: auto;
+  }
+
+  &Info {
+    width: 470px;
+    height: 470px;
+    background: #fff;
+    padding: 70px;
+    margin-top: auto;
+
+    h1 {
+      font-size: 2rem;
+    }
+
+    h3 {
+      margin-top: 16px;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .visitingCard {
+    &Wrap {
+      flex-direction: column;
+    }
+    &Shadow {
+      flex-direction: column;
+      align-items: center;
+    }
+    &Photo {
+      margin-top: 10rem;
+    }
+    &Info {
+      min-height: 300px;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .visitingCard {
+    &Photo {
+      width: 96%;
+    }
+    &Info {
+      width: 96%;
+      padding: 60px;
+    }
+  }
+}
