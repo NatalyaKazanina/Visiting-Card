@@ -1,10 +1,17 @@
-import React from 'react';
+import React, { createRef, useEffect } from 'react';
 import s from './footer.module.scss';
 
-const Footer = () => {
+const Footer = ({scrollToContacts}) => {
+
+    const refContacts = createRef();
+
+    useEffect(() => {
+        scrollToContacts(refContacts.current.offsetTop);
+    });
+
     return(
         <div className={s.footer}>
-            <span className={s.footerTitle}>
+            <span className={s.footerTitle} ref={refContacts}>
                 свяжитесь со мной
             </span>
             <div className={s.footerContacts}>

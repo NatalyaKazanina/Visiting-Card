@@ -1,9 +1,16 @@
-import React from 'react';
+import React, { createRef, useEffect } from 'react';
 import s from './aboutMe.module.scss';
 
-const AboutMe = () => {
+const AboutMe = ({scrollToAboutMe}) => {
+
+    const refAboutMe = createRef();
+
+    useEffect(() => {
+        scrollToAboutMe(refAboutMe.current.offsetTop - 96);
+    });
+
     return (
-        <div className={s.aboutMe}>
+        <div className={s.aboutMe} ref={refAboutMe}>
             <div className={s.aboutMeInsert}></div>
             <h1>Обо мне</h1>
             <p className={s.aboutMeInfo}>Результативность, умение работать в команде, ответственность, высокая работоспособность,

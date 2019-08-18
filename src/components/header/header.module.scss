@@ -12,21 +12,28 @@
   box-shadow: 0 1px 10px #888;
 
   &Logo {
+    font-family: Alegreya Sans SC;
     cursor: pointer;
     font-size: 2rem;
-    font-weight: 400;
+    //font-weight: 400;
   }
 
   &Menu, &MenuHide {
+    font-family: Oswald;
     display: flex;
     justify-content: space-between;
-    width: 450px;
+    width: 500px;
     text-transform: uppercase;
 
     span {
       cursor: pointer;
     }
   }
+
+  &LabelTextDecoration {
+    text-decoration: underline;
+  }
+
 
   &MenuIcon {
     display: none;
@@ -46,7 +53,8 @@
       z-index: 999;
       justify-content: flex-start;
       padding-top: 3rem;
-      transition: 300ms;
+      transition: 500ms;
+
       span {
         padding: 16px 30px;
         font-weight: 500;

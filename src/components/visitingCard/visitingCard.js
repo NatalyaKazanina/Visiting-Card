@@ -2,8 +2,9 @@ import React from 'react';
 import s from './visitingCard.module.scss';
 
 const VisitingCard = () => {
+
     return(
-        <div className={s.visitingCard}>
+        <div className={s.visitingCard} >
             <div className={s.visitingCardImage}>
                 <div className={s.visitingCardShadow}>
                     <div className={s.visitingCardPhoto}></div>

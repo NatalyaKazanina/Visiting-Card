@@ -1,11 +1,23 @@
-import React from 'react';
+import React, { createRef, useEffect } from 'react';
 import s from './experience.module.scss';
 
-const Experience = () => {
+const Experience = ({scrollToExperience, scrollToEducation, scrollToAdditionalEducation}) => {
+
+    const refExperience = createRef();
+    const refEducation = createRef();
+    const refAdditionalEducation = createRef();
+
+    useEffect(() => {
+        scrollToExperience(refExperience.current.offsetTop - 96);
+        scrollToEducation(refEducation.current.offsetTop - 96);
+        scrollToAdditionalEducation(refAdditionalEducation.current.offsetTop - 96);
+    });
+
     return (
         <div className={s.experience}>
+
             <div className={s.experienceWrapper}>
-                <h1>опыт работы</h1>
+                <h1 ref={refExperience}>опыт работы</h1>
                 <div className={s.experienceBlock}>
                     <div className={s.experienceBlockData}>
                         <p>Апрель 2018 — по настоящее время</p>
@@ -69,8 +81,9 @@ const Experience = () => {
                     </div>
                 </div>
             </div>
+
             <div className={s.experienceWrapper}>
-                <h1>образование</h1>
+                <h1 ref={refEducation}>образование</h1>
                 <div className={s.experienceBlock}>
                     <div className={s.experienceBlockData}>
                         <p>2004 — 2007</p>
@@ -92,8 +105,9 @@ const Experience = () => {
                     </div>
                 </div>
             </div>
+
             <div className={`${s.experienceWrapper} ${s.experienceKvalification}`}>
-                <h1>повышение квалификации</h1>
+                <h1 ref={refAdditionalEducation}>повышение квалификации</h1>
                 <div className={s.experienceBlock}>
                     <div className={s.experienceBlockData}>
                         <p>2019</p>
