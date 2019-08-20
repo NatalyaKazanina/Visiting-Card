@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import s from './header.module.scss';
 
-const Header = ({scrollToHeader, handleClick, elementAboutMe, elementExperience}) => {
+const Header = ({scrollToHeader, handleClick, elementAboutMe, elementExperience,
+                 elementEducation, elementAdditionalEducation, elementContacts}) => {
 
     const menuItems = [
         {label: 'обо мне'},
@@ -19,27 +20,21 @@ const Header = ({scrollToHeader, handleClick, elementAboutMe, elementExperience}
         setStateHeight(window.scrollY);
     });
 
-    let classNames = ``;
-
     const menu = menuItems.map(({label}) => {
+        let classNames;
 
-        // const isActive = height === elementAboutMe;
-        // const clazz = isActive ? `${s.headerLabelTextDecoration}` : '';
-        // console.log(clazz);
-
-        if (height >= elementAboutMe && height < elementExperience) {
-            classNames = `${s.headerLabelTextDecoration}`;
+        if ((height >= elementAboutMe && height < elementExperience && label === 'обо мне') ||
+            (height >= elementExperience && height < elementEducation && label === 'опыт работы') ||
+            (height >= elementEducation && height < elementAdditionalEducation && label === 'образование') ||
+            (height >= elementAdditionalEducation && height < elementContacts - 448 && label === 'навыки') ||
+            (height >= elementContacts - 448 && label === 'контакты')) {
+            classNames = s.headerLabelTextDecoration;
         }
-
-        // if (height >= elementAboutMe) {
-        //     classNames = `${s.headerAboutMe}`;
-        // }
 
         return (
             <span
                 key={label}
                 className={classNames}
-                //className={clazz}
                 onClick={() => handleClick(label)}
             >
                 {label}

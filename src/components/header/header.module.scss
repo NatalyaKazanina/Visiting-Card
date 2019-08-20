@@ -7,15 +7,19 @@
   align-items: center;
   padding: 0 100px;
   background: white;
-  letter-spacing: .05rem;
+  letter-spacing: .07rem;
   z-index: 1;
   box-shadow: 0 1px 10px #888;
 
   &Logo {
-    font-family: Alegreya Sans SC;
+    font-family: Scada;
     cursor: pointer;
-    font-size: 2rem;
-    //font-weight: 400;
+    font-size: 2.2rem;
+  }
+
+  &Logo:hover {
+    color: rgba(134, 137, 202, 0.5);
+    transition: 200ms;
   }
 
   &Menu, &MenuHide {
@@ -28,12 +32,16 @@
     span {
       cursor: pointer;
     }
+    span:hover {
+      color: rgba(156, 159, 230, 0.84);
+      transition: 200ms;
+    }
   }
 
   &LabelTextDecoration {
-    text-decoration: underline;
+    color: rgba(156, 159, 230, 0.84);
+    transition: 200ms;
   }
-
 
   &MenuIcon {
     display: none;
@@ -62,16 +70,23 @@
         letter-spacing: .15rem;
       }
     }
+
     &MenuHide {
       left: -350px;
     }
+
     &MenuIcon {
       cursor: pointer;
       display: flex;
       margin-top: 6px;
+
       i {
         font-size: 2rem;
       }
+    }
+
+    &LabelTextDecoration {
+      background-color: #898fd6;
     }
   }
 }

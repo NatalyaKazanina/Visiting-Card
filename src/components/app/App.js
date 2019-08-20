@@ -52,6 +52,9 @@ const App = () => {
               handleClick = {handleClick}
               elementAboutMe={elementAboutMe}
               elementExperience={elementExperience}
+              elementEducation={elementEducation}
+              elementAdditionalEducation={elementAdditionalEducation}
+              elementContacts={elementContacts}
       />
       <VisitingCard />
       <AboutMe scrollToAboutMe={scrollToAboutMe} />
